@@ -36,17 +36,20 @@ cgr phpmd/phpmd
 cgr spatie/http-status-check
 cgr spatie/phpunit-watcher
 
-echo "Backing up current ~/.zshrc file to ~/.dotfiles/.zshrc_backup"
-mv ~/.zshrc ~/.dotfiles/.zshrc_backup
+mkdir $HOME/.dotfiles
+cp -r $PWD/dotfiles/* $HOME/.dotfiles
+# echo "Backing up current ~/.zshrc file to ~/.dotfiles/.zshrc_backup"
+mv $HOME/.zshrc $HOME/.dotfiles/.zshrc_backup
 
 # create symlink for zsh config
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
 
 echo "moving initial hyper terminal config to ~/.dotfiles/.hyper_backup.js"
-mv ~/.hyper.js ~/.dotfiles/.hyper_backup.js
+mv $HOME/.hyper.js $HOME/.dotfiles/.hyper_backup.js
 
-# create symling for hyper terminal config
+# create symlink for hyper terminal config
+cp -r $PWD/dotfiles/.hyper.js $HOME/.dotfiles/.hyper.js
 rm $HOME/.hyper.js
 ln -s $HOME/.dotfiles/.hyper.js $HOME/.hyper.js
 
