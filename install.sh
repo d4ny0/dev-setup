@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Setting up your Mac..."
-
+echo "Installing Homebrew..."
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -9,8 +9,8 @@ fi
 
 # Update Homebrew recipes
 brew update
-
 # Install all our dependencies with bundle (See Brewfile)
+echo "Installing Brew Dependencies..."
 brew tap homebrew/bundle
 brew bundle
 
@@ -18,6 +18,7 @@ brew bundle
 chsh -s $(which zsh)
 
 # Check for Composer and install if we don't have it
+echo "Installing Composer and Dependencies..."
 if test ! $(which composer); then
     curl -sS https://getcomposer.org/installer | php
     mv composer.phar /usr/local/bin/composer
@@ -29,12 +30,16 @@ composer global require hirak/prestissimo # enables parallel installation of pac
 
 cgr bramus/mixed-content-scan
 cgr friendsofphp/php-cs-fixer
-cgr laravel/envoy
 cgr laravel/installer
 cgr laravel/valet
 cgr phpmd/phpmd
 cgr spatie/http-status-check
 cgr spatie/phpunit-watcher
+
+# install laravel/homestead
+echo "Installing Laravel/Homestead..."
+vagrant box add laravel/homestead
+git clone https://github.com/laravel/homestead.git ~/Homestead
 
 mkdir $HOME/.dotfiles
 cp -r $PWD/dotfiles/* $HOME/.dotfiles
