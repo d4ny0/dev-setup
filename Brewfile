@@ -6,9 +6,6 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
 
-# Install Antigen
-brew 'antigen'
-
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
 
@@ -29,17 +26,24 @@ brew 'git-flow-avh'
 brew 'git'
 brew 'htop'
 brew 'httpie'
-brew 'hub' #additional git features
-brew 'mackup' #backup all application settings
-brew 'mas' #use app store from the cli
+
+# additional git features
+brew 'hub'
+
+# backup all application settings
+brew 'mackup'
+
+# use app store from the cli
+brew 'mas'
 brew 'ncdu'
-brew 'nvm'
 brew 'prettyping'
-brew 'thefuck'
 brew 'tldr'
 brew 'tmux'
-brew 'trash' #move items to the trash
-brew 'tree' #tree command from windows
+
+# move items to the trash
+brew 'trash'
+# tree command from windows
+brew 'tree'
 brew 'unrar'
 brew 'wget'
 brew 'wifi-password'
@@ -49,12 +53,14 @@ brew 'yarn'
 brew 'php'
 brew 'mysql@5.7'
 brew 'imagemagick'
-brew 'redis'
+# brew 'redis'
 
 # Development Apps
-cask 'hyper' #terminal app
+#terminal app
+cask 'hyper'
 cask 'postman'
-cask 'sequel-pro' #sql client
+#sql client
+cask 'sequel-pro'
 cask 'sketch'
 cask 'transmit'
 cask 'vagrant'
@@ -63,10 +69,16 @@ cask 'virtualbox'
 cask 'visual-studio-code'
 
 # Apps
-cask '1password' #password manager
-cask 'aerial' #screen saver
+
+# password manager
+cask '1password'
+
+# screen saver
+cask 'aerial'
 cask 'alfred'
-cask 'caffeine' #toggle sleep timer
+
+# toggle sleep timer
+cask 'caffeine'
 cask 'firefox'
 cask 'google-chrome'
 cask 'google-drive-file-stream'

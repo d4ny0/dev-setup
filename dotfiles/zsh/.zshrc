@@ -1,23 +1,28 @@
-# Add ssh key
-[[ -z $(ssh-add -L | grep $HOME/.ssh/id_rsa) ]] && ssh-add $HOME/.ssh/id_rsa
+# Filepaths
+ANTIBODY_PLUGINS=~/.dotfiles/zsh/.zsh_plugins.txt
+PLUGINS_CACHED=~/.dotfiles/zsh/.zsh_plugins.sh
+ALIASES=~/.dotfiles/zsh/aliases.zsh
+FUNCTIONS=~/.dotfiles/zsh/functions.zsh
+EXPORTS=~/.dotfiles/zsh/exports.zsh
 
-# Antigen
-[[ -f ~/.dotfiles/zsh/antigen.zsh ]] && source ~/.dotfiles/zsh/antigen.zsh
+# Add ssh key
+[[ -z $(ssh-add -L | grep ~/.ssh/id_rsa) ]] && ssh-add ~/.ssh/id_rsa
+
+# Antibody
+# comment out this line after initial setup - uncomment after new plugin is installed
+antibody bundle < $ANTIBODY_PLUGINS > $PLUGINS_CACHED
+
+# uncomment this line after initial setup to cache installed plugins
+# [[ -f $PLUGINS_CACHED ]] && source $PLUGINS_CACHED
 
 # Aliases
-[[ -f ~/.dotfiles/zsh/aliases.zsh ]] && source ~/.dotfiles/zsh/aliases.zsh
+[[ -f $ALIASES ]] && source $ALIASES
 
 # Functions
-[[ -f ~/.dotfiles/zsh/functions.zsh ]] && source ~/.dotfiles/zsh/functions.zsh
+[[ -f $FUNCTIONS ]] && source $FUNCTIONS
 
 # Exports
-[[ -f ~/.dotfiles/zsh/exports.zsh ]] && source ~/.dotfiles/zsh/exports.zsh
+[[ -f $EXPORTS ]] && source $EXPORTS
 
-# Theme
-[[ -f ~/.dotfiles/zsh/theme.zsh ]] && source ~/.dotfiles/zsh/theme.zsh
-
-# Enable fzf key bindings and fuzzy completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Enable z
-[ -f ~/.dotfiles/zsh/z.sh ] && . ~/.dotfiles/zsh/z.sh
+# set default user to clean up prompt
+DEFAULT_USER="$USER"
