@@ -5,6 +5,8 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
+tap "getantibody/tap"
+
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
@@ -26,6 +28,7 @@ brew 'git-flow-avh'
 brew 'git'
 brew 'htop'
 brew 'httpie'
+brew 'antibody'
 
 # additional git features
 brew 'hub'
