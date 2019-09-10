@@ -1,23 +1,23 @@
 # jump to theme directory
 function theme () {
-    cd ~/code/$1/web/app/themes/towa-theme
+    cd ~/dev/$1/web/app/themes/towa-theme
 }
 
 # open projectin vs code
 function dev() {
     project=$1;
-    code ~/code/${project}
+    code ~/dev/${project}
 }
 
 function devopen () {
     project=$1;
-    code ~/code/${project} && cd ~/code/${project}/web/app/themes/towa-theme
+    code ~/dev/${project} && cd ~/dev/${project}/web/app/themes/towa-theme
 }
 
 # jump to theme directory and run yarn watch
 function devrun () {
     project=$1;
-    cd ~/code/${project}/web/app/themes/towa-theme && yarn watch
+    cd ~/dev/${project}/web/app/themes/towa-theme && yarn watch
 }
 
 ## Homestead Stuff ##
