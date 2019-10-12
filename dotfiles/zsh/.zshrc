@@ -26,3 +26,7 @@ antibody bundle < $ANTIBODY_PLUGINS > $PLUGINS_CACHED
 
 # set default user to clean up prompt
 DEFAULT_USER="$USER"
+
+# initialize nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && . "$(brew --prefix nvm)/nvm.sh"  # This loads nvm

@@ -1,19 +1,19 @@
 # Taps
 tap 'homebrew/bundle'
-tap 'homebrew/cask' #install apps over cli
+# enable installings apps over cli
+tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/core'
 tap 'homebrew/services'
+tap "getantibody/tap"
+
 
 # Install GNU core utilities (those that come with macOS are outdated)
 brew 'coreutils'
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew 'findutils'
-
-# Install Bash 4
-brew 'bash'
 
 # Install more recent versions of some macOS tools
 brew 'grep'
@@ -26,6 +26,7 @@ brew 'git-flow-avh'
 brew 'git'
 brew 'htop'
 brew 'httpie'
+brew 'antibody'
 
 # additional git features
 brew 'hub'
@@ -47,25 +48,26 @@ brew 'tree'
 brew 'unrar'
 brew 'wget'
 brew 'wifi-password'
+brew 'nvm'
 brew 'yarn'
 
 # Development
 brew 'php'
 brew 'mysql@5.7'
 brew 'imagemagick'
-# brew 'redis'
 
 # Development Apps
-#terminal app
-cask 'hyper'
+
+# terminal app
+cask 'iterm2'
 cask 'postman'
+
 #sql client
 cask 'sequel-pro'
-cask 'sketch'
 cask 'transmit'
 cask 'vagrant'
-cask 'virtualbox-extension-pack'
 cask 'virtualbox'
+cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
 
 # Apps
@@ -81,13 +83,18 @@ cask 'alfred'
 cask 'caffeine'
 cask 'firefox'
 cask 'google-chrome'
-cask 'google-drive-file-stream'
+
 cask 'imageoptim'
-cask 'rocket' #emoji client
+
+#emoji client
+cask 'rocket'
 cask 'slack'
-cask 'spectacle' #window manager for mac
+
+#window manager for mac
+# cask 'spectacle'
+cask 'moom'
 cask 'spotify'
-cask 'telegram'
+cask 'franz'
 cask 'vlc'
 
 # Quicklook - hitting space in finder
