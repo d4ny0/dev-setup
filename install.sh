@@ -14,6 +14,9 @@ echo "Installing Brew Dependencies..."
 brew tap homebrew/bundle
 brew bundle
 
+# create system directory for nvm which is installed with homebrew
+mkdir ~/.nvm
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
@@ -25,8 +28,11 @@ if test ! $(which composer); then
 fi
 
 # Install global Composer packages
-composer global require consolidation/cgr # Safer alternative to 'composer global require'.
-composer global require hirak/prestissimo # enables parallel installation of packages
+
+# Safer alternative to 'composer global require'.
+composer global require consolidation/cgr
+# enables parallel installation of packages
+composer global require hirak/prestissimo
 
 cgr bramus/mixed-content-scan
 cgr friendsofphp/php-cs-fixer
@@ -49,13 +55,5 @@ mv $HOME/.zshrc $HOME/.dotfiles/.zshrc_backup
 # create symlink for zsh config
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/zsh/.zshrc $HOME/.zshrc
-
-echo "moving initial hyper terminal config to ~/.dotfiles/.hyper_backup.js"
-mv $HOME/.hyper.js $HOME/.dotfiles/.hyper_backup.js
-
-# create symlink for hyper terminal config
-cp -r $PWD/dotfiles/.hyper.js $HOME/.dotfiles/.hyper.js
-rm $HOME/.hyper.js
-ln -s $HOME/.dotfiles/.hyper.js $HOME/.hyper.js
 
 source $HOME/.zshrc
