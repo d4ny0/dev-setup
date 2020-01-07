@@ -22,7 +22,7 @@ function devrun () {
     cd $PROJECTS_DIR/${project}/web/app/themes/towa-theme && yarn watch
 }
 
-## Homestead Stuff ##
+# Homestead Stuff
 function homestead() {
     ( cd ~/Homestead && vagrant $* )
 }
@@ -37,6 +37,19 @@ function weather() {
     eval "curl http://wttr.in/${city}"
 }
 
+# align displays as saved
 function dp() {
     displayplacer "id:2C836D2C-096C-E130-6AE8-74775BD9012D res:1440x900 color_depth:8 scaling:on origin:(0,0) degree:0" "id:EE005615-F390-BF44-764F-197C8E5830A5 res:1920x1080 hz:60 color_depth:8 scaling:off origin:(-1294,-1080) degree:0" "id:312E6558-2659-80CC-FE34-F7958B96AF26 res:1920x1080 hz:60 color_depth:8 scaling:off origin:(626,-1080) degree:0"
+}
+
+# switch between php versions
+function switchphp() {
+    brew unlink php@$1 && brew link --force php@$2
+}
+
+# initialize nvm on demand
+function usenvm() {
+    export NVM_DIR="$HOME/.nvm"
+
+    source $(brew --prefix nvm)/nvm.sh
 }
